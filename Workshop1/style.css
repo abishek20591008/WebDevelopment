@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightblue;
+    margin: 40px;
+}
+
+h1 {
+    color: darkblue;
+}
+
+h2 {
+    color: darkgreen;
+}
+
+p {
+    font-size: 18px;
+}
