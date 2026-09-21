@@ -1,15 +1,17 @@
 // Workshop 3 - JavaScript Events & DOM
 
-// Exercise 1 - Button click
+// ====================
+// Exercise 1
+// ====================
 
-// First button: show an alert
 const buttons = document.querySelectorAll("button");
 
+// First button
 buttons[0].addEventListener("click", function () {
     alert("You clicked me!");
 });
 
-// Second button: show the animal table
+// Second button
 function showTable() {
     const animal = "Dog";
     const habitat = "Home";
@@ -35,3 +37,21 @@ function showTable() {
 }
 
 buttons[1].addEventListener("click", showTable);
+
+
+// ====================
+// Exercise 2
+// ====================
+
+const headings = document.querySelectorAll("h2");
+
+// Exercise 2 heading - mouseover
+headings[1].addEventListener("mouseover", function () {
+    console.log("Stepped over me with a mouse!");
+});
+
+// Exercise 1 heading - click
+headings[0].addEventListener("click", function () {
+    headings[0].innerHTML = "Bye bye mouse!";
+    headings[0].style.color = "red";
+});
