@@ -1,0 +1,71 @@
+/* WS4 DOM Scripting styles */
+
+.highlight {
+    background-color: #fff3a6;
+    color: #222;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.animal-heading {
+    color: #26734d;
+    font-size: 1.5rem;
+}
+
+.alternate-background {
+    background-color: #f0f7ff;
+}
+
+.image-highlight {
+    outline: 4px solid #48a868;
+    transform: scale(1.03);
+}
+
+.image-moved {
+    transform: translateX(40px);
+}
+
+.image-animated {
+    animation: animal-bounce 0.7s ease-in-out 2;
+}
+
+.image-faded {
+    opacity: 0.2;
+}
+
+.list-highlight {
+    background-color: #fff3a6;
+}
+
+#animalContent img,
+#animalImage {
+    max-width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease, transform 0.3s ease;
+}
+
+button {
+    cursor: pointer;
+    margin: 4px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 12px 0;
+}
+
+th,
+td {
+    border: 1px solid #aaa;
+    padding: 8px;
+}
+
+@keyframes animal-bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
