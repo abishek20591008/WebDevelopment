@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Five-day weather forecast using Axios, Chart.js and jQuery.">
+  <title>WS09 – Weather forecast</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <p class="eyebrow">WEB DEVELOPMENT 1 · WORKSHOP 09</p>
+      <h1>Weather forecast</h1>
+      <p class="intro">Explore the next five days of weather. Search for a city and switch between chart styles.</p>
+    </header>
+
+    <section class="panel" aria-labelledby="search-heading">
+      <h2 id="search-heading">Find a forecast</h2>
+      <form id="weatherForm">
+        <div class="field">
+          <label for="kaupunki">City</label>
+          <input type="text" id="kaupunki" name="city" value="Helsinki" placeholder="e.g. Helsinki" autocomplete="address-level2" required>
+        </div>
+        <div class="field">
+          <label for="apiKey">OpenWeather API key</label>
+          <input type="password" id="apiKey" name="apiKey" placeholder="Enter your API key" autocomplete="off" required>
+          <small>Your key is entered in this browser only. It is not stored in the project files.</small>
+        </div>
+        <button id="haeSaaPainike" type="submit">Get weather</button>
+      </form>
+      <p id="saaYllatys" class="surprise" hidden>☁️ The cloud crew is checking the weather!</p>
+      <p id="statusMessage" class="status" role="status" aria-live="polite">Enter your API key to load a forecast.</p>
+    </section>
+
+    <section class="panel results" aria-labelledby="results-heading">
+      <div class="results-heading">
+        <div>
+          <p class="eyebrow">YOUR FORECAST</p>
+          <h2 id="results-heading"> <span id="cityName">Helsinki</span></h2>
+        </div>
+        <div class="field chart-select">
+          <label for="chartType">Chart type</label>
+          <select id="chartType">
+            <option value="line">Line</option>
+            <option value="bar">Bar</option>
+          </select>
+        </div>
+      </div>
+      <p id="forecastSummary" class="summary">The lowest and highest temperatures will appear here.</p>
+      <div class="chart-wrap"><canvas id="tempChart" aria-label="Five-day temperature forecast chart"></canvas></div>
+      <p class="note">Forecast points are shown in three-hour intervals. Times are displayed in UTC, as provided by OpenWeather.</p>
+    </section>
+
+    <footer>Built for Laurea University of Applied Sciences · WS09 JavaScript libraries</footer>
+  </main>
+</body>
+</html>
